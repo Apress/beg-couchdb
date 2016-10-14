@@ -1,0 +1,4 @@
+function(newDoc, oldDoc, userCtx) {
+	if(newDoc.owner && newDoc.owner != userCtx.name)
+		throw({"error": "You do not own this document!"});
+}

@@ -1,0 +1,27 @@
+$.CouchApp(function(app) {
+	$('form#add_task').submit(function(e) {
+		e.preventDefault();
+		var newTask = {
+			desc: $('#desc').val()
+		}
+		if(newTask.desc.length > 0) {
+			app.db.saveDoc(newTask, { success: function(resp) {
+				$('ul#my_tasks').append('<li>'+newTask.desc+'</li>');
+				$('ul#my_tasks li:last').hide().fadeIn(1500);
+				$('#desc').val('');
+				var task_count = parseInt($('#task_count span').html(), 10);
+				task_count++;
+				$('#task_count span').html(task_count);
+			}});
+		} else {
+			alert('You must enter a description to create a new task!');
+		}
+		});
+		
+		app.view("get_tasks", { success: function(json) {
+			json.rows.map(function(row) {
+			$('ul#my_tasks').append('<li>'+row.key+'</li>');
+		});
+		$('#task_count span').html(json.rows.length);
+	}});
+});

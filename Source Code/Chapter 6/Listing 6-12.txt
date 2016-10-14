@@ -1,0 +1,13 @@
+{
+	_id: "_design/ordering",
+	_rev: "2-233320815",
+	language: "javascript",
+	views: {
+		order_by_salary: {
+			map: "function(doc) { emit(doc.salary, doc); }"
+		},
+		order_by_department: {
+			map: "function(doc) { emit(doc.dept, doc); }"
+		}
+	}
+}

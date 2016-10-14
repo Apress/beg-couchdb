@@ -1,0 +1,3 @@
+function(doc) {
+	if(doc.type == "car") emit(doc.make, { "model": doc.model, "year": doc.year });
+}

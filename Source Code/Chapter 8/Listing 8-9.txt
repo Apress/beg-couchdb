@@ -1,0 +1,6 @@
+{"rows":[
+	{"key":"Both","value":1},
+	{"key":"Email","value":2},
+	{"key":"Fax","value":1},
+	{"key":"Neither","value":1}
+]}

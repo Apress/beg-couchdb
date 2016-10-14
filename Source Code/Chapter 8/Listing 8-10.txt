@@ -1,0 +1,4 @@
+function(doc) {
+	if(doc.type != "contact") return;
+	emit([doc.country, doc.name], {name: doc.name, email: doc.email});
+}

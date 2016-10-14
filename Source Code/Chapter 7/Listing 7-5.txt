@@ -1,0 +1,4 @@
+function(doc) {
+	if(doc.email)
+		emit(doc._id, {Name: doc.name, Email: doc.email});
+}

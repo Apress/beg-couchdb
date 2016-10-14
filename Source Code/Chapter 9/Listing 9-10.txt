@@ -1,0 +1,11 @@
+map: function(doc) {
+	if(doc.payslips) {
+		for(item in doc.payslips) {
+			emit(doc.name, doc.payslips[item].amount);
+		}
+	}
+}
+
+reduce: function(keys, values, rereduce) {
+	return sum(values);
+}

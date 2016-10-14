@@ -1,0 +1,8 @@
+{
+	"all_or_nothing":"true",
+	"docs": [
+		{"_id":"jill","_rev":"2-1465099083","name":"Jillian Mac Sweeney"},
+		{"_id":"jim","_rev":"2-3528199421","name":"James Lennon"},
+		{"_id":"joe","_rev":"2-1118430947","_deleted":true}
+	]
+}

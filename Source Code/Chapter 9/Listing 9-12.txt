@@ -1,0 +1,6 @@
+map: function(doc) {
+	if(doc.type == "employee")
+		emit([doc.employee_no, 0], doc);
+	else if(doc.type == "payslip")
+		emit([doc.employee_no,1], doc);
+}

@@ -1,0 +1,13 @@
+{
+	"httpd_request_methods": {
+		"GET": {
+			"current":8,
+			"count":3206,
+			"mean":0.0024953212726138586,
+			"min":0,
+			"max":7,
+			"stddev":0.12485804469709988,
+			"description":"number of HTTP GET requests"
+		}
+	}
+}

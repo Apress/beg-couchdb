@@ -1,0 +1,3 @@
+easy_install couchdb
+easy_install simplejson
+easy_install couchapp

@@ -1,0 +1,21 @@
+{
+	make: "Ford",
+	model: "Mustang",
+	year: 2009,
+	body: "Coupe",
+	color: "Red",
+	engine: {
+		gas_type: "Petrol",
+		cubic_capacity: 4600
+	},
+	previous_owners: [
+		{
+			name: "John Smith",
+			mileage: 1000
+		},
+		{
+			name: "Jane Hunt",
+			mileage: 2500
+		}
+	]
+}

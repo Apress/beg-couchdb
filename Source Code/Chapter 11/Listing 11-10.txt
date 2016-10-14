@@ -1,0 +1,18 @@
+require 'Bookmark'
+
+puts "Enter website URL: "
+STDOUT.flush
+the_url = gets.chomp
+
+puts "Enter website title: "
+STDOUT.flush
+the_title = gets.chomp
+
+bmark = Bookmark.new(
+	:url => the_url,
+	:title => the_title
+)
+
+puts "Saving bookmark: #{bmark.inspect}"
+bmark.save
+puts "Bookmark Saved."

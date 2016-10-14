@@ -1,0 +1,52 @@
+import os, platform
+PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+
+ADMINS = (
+	('Joe Lennon', 'joe@joelennon.ie'),
+)
+MANAGERS = ADMINS
+
+DATABASE_ENGINE = 'sqlite3'
+DATABASE_NAME = 'dummy.db'
+
+COUCHDB_DATABASES = (
+	('myproject.bookmarks', 'http://127.0.0.1:5984/bookmarks'),
+)
+
+TIME_ZONE = 'Europe/Dublin'
+LANGUAGE_CODE = 'en-us'
+SITE_ID = 1
+USE_I18N = True
+MEDIA_ROOT = os.path.join(PROJECT_PATH, 'static')
+MEDIA_URL = '/media'
+ADMIN_MEDIA_PREFIX = '/media/admin/'
+
+SECRET_KEY = 'fsdg43sdfgu5tfgjfhdgsd554ergf54yhdsgeghdgghgfd56ytr'
+
+TEMPLATE_LOADERS = (
+	'django.template.loaders.filesystem.load_template_source',
+	'django.template.loaders.app_directories.load_template_source',
+)
+
+MIDDLEWARE_CLASSES = (
+	'django.middleware.common.CommonMiddleware',
+	'django.contrib.sessions.middleware.SessionMiddleware',
+	'django.contrib.auth.middleware.AuthenticationMiddleware',
+)
+
+ROOT_URLCONF = 'myproject.urls'
+
+TEMPLATE_DIRS = (
+	os.path.join(PROJECT_PATH, 'templates'),
+)
+
+INSTALLED_APPS = (
+	'django.contrib.auth',
+	'django.contrib.contenttypes',
+	'django.contrib.sessions',
+	'django.contrib.sites',
+	'couchdbkit.ext.django',
+	'myproject.bookmarks',
+)

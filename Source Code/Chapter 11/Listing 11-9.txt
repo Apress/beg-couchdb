@@ -1,0 +1,10 @@
+require 'Bookmark'
+
+bmark = Bookmark.new(
+	:url => 'http://couchdb.apache.org',
+	:title => 'Official Apache CouchDB project website'
+)
+
+puts "Saving bookmark: #{bmark.inspect}"
+bmark.save
+puts "Bookmark Saved."

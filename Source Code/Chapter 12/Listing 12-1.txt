@@ -1,0 +1,7 @@
+{
+	"docs": [
+		{"_id": "patrick", "name": "Patrick Mac Sweeney"},
+		{"_id": "susie", "name": "Susan Mac Sweeney"},
+		{"_id": "sarah": "name": "Sarah Mac Sweeney"}
+	]
+}

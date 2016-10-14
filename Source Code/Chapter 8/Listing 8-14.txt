@@ -1,0 +1,5 @@
+function(doc) {
+	var words = doc.content.toLowerCase().replace(/[^a-z]+/g, ' ').split(' ');
+	for(word in words)
+		emit(words[word].substring(0,1), 1);
+}

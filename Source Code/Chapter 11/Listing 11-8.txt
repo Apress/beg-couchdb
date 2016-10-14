@@ -1,0 +1,13 @@
+require 'rubygems'
+require 'couchrest'
+
+SERVER = CouchRest.new
+DB = SERVER.database('ruby_test')
+
+class Bookmark < CouchRest::ExtendedDocument
+	use_database DB
+	property :url
+	property :title
+	timestamps!
+	view_by :title
+end

@@ -1,0 +1,8 @@
+from datetime import datetime
+from django.db import models
+from couchdbkit.ext.django.schema import *
+
+class Bookmark(Document):
+	url = StringProperty(required=True)
+	title = StringProperty(required=True)
+	date_added = DateTimeProperty(default=datetime.utcnow)

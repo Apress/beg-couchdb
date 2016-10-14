@@ -1,0 +1,3 @@
+from couchdbkit.client import Server
+server = Server()
+server.create_db("python_test")

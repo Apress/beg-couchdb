@@ -1,0 +1,7 @@
+from couchdbkit.schema import Document
+from couchdbkit.schema.properties import *
+
+class Bookmark(Document):
+	url = StringProperty()
+	title = StringProperty()
+	date_added = DateTimeProperty()

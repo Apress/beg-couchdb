@@ -1,0 +1,66 @@
+{
+	"httpd_status_codes": {
+		"200": {
+			"current":25,
+			"count":58,
+			"mean":0.4310344827586207,
+			"min":0,
+			"max":6,
+			"stddev":1.2192715316025617,
+			"description":"number of HTTP 200 OK responses"
+		}, "404": {
+			"current":4,
+			"count":58,
+			"mean":0.06896551724137934,
+			"min":0,"max":2,
+			"stddev":0.3649312153192539,
+			"description":"number of HTTP 404 Not Found responses"
+		}
+	}, "httpd_request_methods" : {
+		"GET": {
+			"current":57,
+			"count":60,
+			"mean":0.9499999999999996,
+			"min":0,
+			"max":17,
+			"stddev":2.8660367524975436,
+			"description":"number of HTTP GET requests"
+		}
+	}, "httpd": {
+		"requests": {
+			"current":57,
+			"count":60,
+			"mean":0.9499999999999996,
+			"min":0,
+			"max":17,
+			"stddev":2.8660367524975436,
+			"description":"number of HTTP requests"
+		}
+	}, "couchdb": {
+		"open_databases": {
+			"current":2,
+			"count":53,
+			"mean":0.03773584905660379,
+			"min":0,
+			"max":2,
+			"stddev":0.2721170773935086,
+			"description":"number of open databases"
+		}, "open_os_files": {
+			"current":2,
+			"count":53,
+			"mean":0.03773584905660379,
+			"min":0,
+			"max":2,
+			"stddev":0.2721170773935086,
+			"description":"number of file descriptors CouchDB has open"
+		}, "request_time": {
+			"current":0,
+			"count":57,
+			"mean":1.5789473684210524,
+			"min":0,
+			"max":10,
+			"stddev":3.646422752776584,
+			"description":"length of a request inside CouchDB without MochiWeb"
+		}
+	}
+}

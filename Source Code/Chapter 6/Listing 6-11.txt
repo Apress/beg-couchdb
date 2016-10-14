@@ -1,0 +1,7 @@
+{
+	_id: "0ff345433e3464ae346453",
+	_rev: "4-18435343",
+	name: "John Smith",
+	salary: 38000,
+	department: "Accounts"
+}

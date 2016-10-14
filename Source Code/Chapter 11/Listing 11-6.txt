@@ -1,0 +1,15 @@
+from Bookmark import Bookmark
+from couchdbkit.client import Server
+from couchdbkit.session import create_session
+from couchdbkit.loaders import FileSystemDocsLoader
+
+server = Server()
+db = create_session(server, "python_test")
+
+Bookmark = db(Bookmark)
+
+loader = FileSystemDocsLoader('/home/joe/python_couch/views/_design')
+loader.sync(db, verbose=True)
+
+bmarks = Bookmark.view('bookmark/all')
+print(str(bmarks.count()) + ' bookmark(s) in database.')

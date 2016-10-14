@@ -1,0 +1,4 @@
+function(doc) {
+	if(doc.fax)
+		emit(doc._id, {Name: doc.name, Facsimile: doc.fax});
+}

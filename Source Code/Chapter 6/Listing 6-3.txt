@@ -1,0 +1,7 @@
+{
+	make: "Ford",
+	model: "Mustang",
+	year: 2009,
+	body: "Coupe",
+	color: "Red"
+}

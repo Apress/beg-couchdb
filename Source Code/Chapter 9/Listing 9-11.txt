@@ -1,0 +1,8 @@
+map: function(doc) {
+	if(doc.type == "payslip")
+		emit(doc.employee_no, doc.amount);
+}
+
+reduce: function(keys, values, rereduce) {
+	return sum(values);
+}

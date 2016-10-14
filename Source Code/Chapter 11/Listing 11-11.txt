@@ -1,0 +1,16 @@
+require 'Bookmark'
+
+all_view = {
+	:map = 'function(doc) { if(doc["couchrest-type"] == "Bookmark") emit(doc._id, doc); }'
+}
+
+DB.delete_doc DB.get("_design/bookmark") rescue nil
+
+DB.save_doc({
+	"_id" => "_design/bookmark",
+	:views => {
+		:all => all_view
+	}
+})
+
+puts DB.view('bookmark/all')['rows'].inspect

@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>My Cars</title>
+	</head>
+	<body>
+		<h1>My Cars</h1>
+		<script type="text/javascript">
+			var car = {
+				make: "Ford",
+				model: "Mustang",
+				year: 2009,
+				body: "Coupe",
+				color: "Red",
+				engine: {
+					gas_type: "Petrol",
+					cubic_capacity: 4600
+				},
+				previous_owners: [
+					{
+						name: "John Smith",
+						mileage: 1000
+					}, {
+						name: "Jane Hunt",
+						mileage: 2500
+					}
+				]
+			}
+			
+			document.write('<h2>'+car.make+' '+car.model+'</h2>');
+			document.write('<strong>Year:</strong> '+car.year+'<br />');
+			document.write('<strong>Body Type:</strong> '+car.body+'<br />');
+			document.write('<strong>Engine:</strong> ');
+			document.write(car.engine.cubic_capacity+'cc '+car.engine.gas_type);
+			document.write('<h3>Previous Owners:</h3>');
+			document.write('<ul>');
+			for(person in car.previous_owners) {
+				document.write('<li>');
+				document.write(car.previous_owners[person].name+' (');
+				document.write(car.previous_owners[person].mileage+' miles)');
+				document.write('</li>');
+			}
+			document.write('</ul>');
+		</script>
+	</body>
+</html>

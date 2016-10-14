@@ -1,0 +1,16 @@
+from datetime import datetime
+from Bookmark import Bookmark
+from couchdbkit.client import Server
+from couchdbkit.session import create_session
+
+server = Server()
+db = create_session(server, "python_test")
+bmark = Bookmark(
+	url="http://couchdb.apache.org",
+	title="Official Apache CouchDB project website",
+	date_added=datetime.utcnow()
+)
+
+print('Saving CouchDB document')
+db(bmark).save()
+print('Document Saved.')

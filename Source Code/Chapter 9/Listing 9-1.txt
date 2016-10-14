@@ -1,0 +1,8 @@
+map: function(doc) {
+	if(doc.department)
+		emit(doc.department, 1);
+}
+
+reduce: function(keys, values, rereduce) {
+	return sum(values);
+}

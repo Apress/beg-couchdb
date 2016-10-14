@@ -1,0 +1,4 @@
+POST /db HTTP/1.1
+Content-type: application/json
+
+{“type”:”category”,”name”:”Web Tutorials”,”slug”:”web-tutorials”}

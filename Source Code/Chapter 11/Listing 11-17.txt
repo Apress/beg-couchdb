@@ -1,0 +1,53 @@
+{% load i18n %}
+
+<html>
+<head>
+<title>Bookmarks Application</title>
+<style type="text/css">
+* { font-family: Helvetica, Verdana, sans-serif; }
+body { margin: 0; padding: 0; }
+h1 { background-color: #336699; color: #fff; font-size: 1.3em; margin: 0; padding: 10px; }
+fieldset { margin: 20px; border: 1px solid #ccc; }
+legend {
+	border: 1px solid #ccc; background-color: #eee; padding: 4px; font-weight: bold; fontsize: 0.8em;
+}
+form table { margin: 10px; }
+form table th { text-align: left; }
+form table th label[for="id_url"] { text-transform: uppercase; }
+h2 { margin: 20px; padding: 10px; background-color: #eee; border: 1px solid #ccc; font-size: 1.1em; }
+table.results {
+	width: 95%; margin: 20px; border: 1px solid #ccc; border-bottom: none; border-righ: none;
+}
+table.results th {
+	text-align: left; background-color: #eee; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc;
+}
+table.results td { border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; }
+p { margin: 20px; color: green; font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>Bookmarks Application</h1>
+<form method="post">
+<fieldset><legend>Create New Bookmark</legend>
+<table>
+{{ form.as_table }}
+<tr><td colspan="2" align="center">
+<input type="submit" id="submit" value="Create Bookmark" />
+</td></tr></table></fieldset></form>
+
+{% if bookmark %}
+<p>{{ bookmark.title }} was added.</p>
+{% endif %}
+
+<h2>View Bookmarks</h2>
+<table class="results" cellspacing="0" cellpadding="4">
+<tr><th>Link</th><th>Date Added</th></tr>
+{% for b in bookmarks %}
+<tr>
+<td><a href="{{ b.url }}">{{ b.title }}</a></td>
+<td>{{ b.date_added|date:"D d M Y @ H:i:s" }}</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

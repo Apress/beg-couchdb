@@ -1,0 +1,47 @@
+map: function(doc) {
+	if(doc.department)
+		emit("Max and Min", {"name": doc.name, "salary": doc.salary});
+}
+
+reduce: function(keys, values, rereduce) {
+	var max, min, max_name, min_name;
+	if(rereduce == false) {
+		max = values[0].salary;
+		min = values[0].salary;
+		max_name = values[0].name;
+		min_name = values[0].name;
+		for(item in values) {
+			if(values[item].salary > max) {
+				max = values[item].salary;
+				max_name = values[item].name;
+			}
+			if(values[item].salary < min) {
+				min = values[item].salary;
+				min_name = values[item].name;
+			}
+		}
+		return {
+			"max": { "name": max_name, "salary": max },
+			"min": { "name": min_name, "salary": min }
+		};
+	} else {
+		max = values[0].max.salary;
+		min = values[0].min.salary;
+		max_salary = values[0].max.name;
+		min_salary = values[0].min.name;
+		for(item in values) {
+			if(values[item].max.salary > max) {
+				max = values[item].max.salary;
+				max_name = values[item].max.name;
+			}
+			if(values[item].min.salary < min) {
+				min = values[item].min.salary;
+				min_name = values[item].min.name;
+			}
+		}
+		return {
+			"max": { "name": max_name, "salary": max },
+			"min": { "name": min_name, "salary": min }
+		};
+	}
+}

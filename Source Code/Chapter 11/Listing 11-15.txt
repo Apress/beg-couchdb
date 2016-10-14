@@ -1,0 +1,28 @@
+from datetime import datetime
+from django.shortcuts import render_to_response
+from django.template import RequestContext, loader, Context
+from couchdbkit.ext.django.forms import DocumentForm
+from myproject.bookmarks.models import Bookmark
+
+class BookmarkForm(DocumentForm):
+	class Meta:
+		document = Bookmark
+		exclude = ('date_added',)
+		
+def index(request):
+	bookmark = None
+	
+	if request.POST:
+		form = BookmarkForm(request.POST)
+		if form.is_valid():
+			bookmark = form.save()
+	else:
+		form = BookmarkForm()
+	
+	bookmarks = Bookmark.view('bookmarks/all', descending=True)
+
+	return render_to_response("index.html", {
+		"form": form,
+		"bookmark": bookmark,
+		"bookmarks": bookmarks
+	}, context_instance=RequestContext(request))

@@ -1,0 +1,15 @@
+{
+	"language": "javascript",
+	"views": {
+		"get_fax_or_email": {
+			"map": "function(doc) {
+				if(doc.name && doc.email && doc.fax)
+					emit(doc._id, {Name: doc.name, Email: doc.email, Fax: doc.fax});
+				else if(doc.name && doc.email)
+					emit(doc._id, {Name: doc.name, Email: doc.email});
+				else if(doc.name && doc.fax)
+					emit(doc._id, {Name: doc.name, Fax: doc.fax});
+			}"
+		}
+	}
+}

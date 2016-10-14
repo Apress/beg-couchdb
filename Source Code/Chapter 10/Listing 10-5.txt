@@ -1,0 +1,62 @@
+* {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+	margin: 0px; padding: 0px;
+}
+
+h1 {
+	margin:0;
+	padding: 0px 0px 0px 20px;
+	background-color: #336699;
+	color: #fff;
+}
+
+p {
+	border: 1px solid #342c03;
+	color: #342c03;
+	background-color: #f0ffc2;
+	padding: 10px;
+	margin: 10px 20px 10px 20px;
+	font-weight: bold;
+}
+
+fieldset {
+	border: 1px solid #666;
+	margin: 0px 20px 20px 20px;
+	background-color: #eee;
+}
+
+legend {
+	padding: 5px 15px 5px 15px;
+	background-color: #ccc;
+	border: 1px solid #666;
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+label {
+	font-weight: bold;
+	font-size: 0.8em;
+}
+
+textarea {
+	width: 95%;
+	height: 100px;
+	margin-bottom: 10px;
+}
+
+input[type=submit] {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+div#task_count {
+	font-size: 0.8em;
+	color: #888;
+}
+
+div#task_count span {
+	font-weight: bold;
+}
